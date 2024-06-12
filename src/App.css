@@ -1,0 +1,208 @@
+:root{
+  --text-orange:rgb(172 114 16); 
+  --opacity-white: #ededed;
+}
+h6{
+  color: #21446f !important;
+  font-size: 20px !important;
+}
+.fs-8{
+  font-size: 12px !important;
+}
+.btn-primary-blue{
+  background: #374045 !important;
+  color: #fff !important;
+}
+input::placeholder{
+  font-size: 12px;
+  font-weight: 500;
+}
+.text-golden{
+  color:var(--text-orange) ;
+}
+.row{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.top-container{
+  min-height: 100vh;
+}
+/* Helper Utilites */
+.cursor-pointer{
+  cursor: pointer !important;
+}
+/* Header */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+#cart {
+/*   border-inline-start: 1px solid rgba(0, 0, 0, .12); */
+  position: relative;
+  text-align: center
+}
+#cart .badge {
+  background: var(--text-orange);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-family: AdelleSansARA-Semibold;
+  font-size: 12px;
+  height: 18px;
+  inset-block-start: -5px;
+  inset-inline-start: 10px;
+  min-width: 18px;
+  padding: 2px;
+  position: absolute
+}
+.nav-link span{
+ margin-left: 10px;
+}
+.nav-link:hover{
+  content: "";
+  position: relative;
+  border-bottom: 4px solid orange;
+}
+.logo{
+  width: 60px;
+}
+.logo-container{
+  position: absolute;
+  right: 50px;
+}
+.bg-header-responsive{
+  background-color: rgb(255, 255, 255); 
+}
+.text-c-orange{
+  color: var(--text-orange) !important;
+}
+/* body{
+  min-height: 200vh;
+} */
+/* Home Page */
+.side-element{
+  width: 120px;
+  height: 25px;
+  background-color: white;
+  position: fixed;
+  z-index: 1231;
+  border-radius: 20px  0px 0 20px;
+  right: 0;
+  top: 13rem;
+  overflow: hidden;
+}
+.side-button{
+  background-color: #21446f;
+  width: 30%;
+  margin-right: auto;
+  border-radius: 20px  0px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.statistics::before{
+  background-color: rgb(172 114 16);
+  background: linear-gradient(60deg, rgba(172, 115, 16, 0.854), rgb(55 64 69));
+  content: "";
+  display: block;
+  height: 100%;
+  inset-block-start: 0;
+  opacity: .9;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.statistics{
+  background-image: url(./assets/footer-bg.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 462px;
+  overflow: hidden;
+  position: relative;
+  z-index: -2;
+  color: white;
+  font-weight: bold;
+}
+
+.stat-no{
+  min-height: 50%;
+  background-color: #ffffff1f;
+}
+.aya{
+  width: 30% !important;
+}
+
+.custom-card-image{
+  height: 150px !important;
+  background-image: url("https://myfixpedia.com/site/assets/images/projects/10.jpeg");
+  background-position: 50% 58%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 2px solid black;
+  border-radius: 20px 20px 0 0 ;
+}
+
+.custom-card-image::after{
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 100%;
+  height: 5px; 
+  z-index: 100;
+  background-color: #ffab00;
+}
+
+
+.bg-c-owhite{
+  background-color: var(--opacity-white);
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer{
+  background-color: #212529;
+  font-weight: bold;
+  font-size: 12px;
+
+}
+.f-content1{
+  background-color: #082c36;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+  .bg-header-responsive {
+      background-color: var(--opacity-white); /* Large screens and up */
+  }
+
+
+}
+@media (max-width: 992px){
+  .logo-container{
+    position: static;
+    opacity: 1;
+  }
+  .aya{
+    width: 80% !important;
+    margin-bottom: 20px;
+  }
+}
