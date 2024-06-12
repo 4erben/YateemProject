@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {Row , Col , Container} from "react-bootstrap";
+import {Row , Col , Container , Form} from "react-bootstrap";
 
 export default function SideElement() {
   const [isClicked, setIsClicked] = useState(false);
@@ -47,9 +47,11 @@ export default function SideElement() {
           </button>
         </Col>
       </Row>
+      <Form>
       <Row className='justify-content-center'>
         <Col className='col-10'>
          <input
+          type='number'
           className='w-100  side-input px-2 form-control rounded-5'
           placeholder='ر.س'
           dir='rtl'
@@ -59,17 +61,18 @@ export default function SideElement() {
         سيذهب تبرعك للحالات الاشد احتياجا
         </Col>
         <Col className='col-12 text-center fs-8 fw-bold text-shade mt-3'>
-        <i class="fa-solid fa-shield-halved "></i>
+        <i className="fa-solid fa-shield-halved "></i>
         <span className='mx-2'>
         جميع عمليات الدفع امنة
         </span>
         </Col>
         <Row className='justify-content-center mt-2'>
-        <button className='btn bg-shade w-75 text-white rounded-5 fw-bold'>تبرع الان </button>
+        <button className='btn bg-shade w-75 text-white rounded-5 fw-bold' type='submit'>تبرع الان </button>
         </Row>
        
 
       </Row>
+      </Form>
       </Container>
     </div>
     }

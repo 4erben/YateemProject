@@ -26,22 +26,22 @@ export default function CustomCard() {
             </Col>
         </Row>
         <Row>
-            <Col className='col-4 text-center'>
+            <Col lg={6} md={6} sm={6} xs={6}  className=' text-center'>
             <span className='fs-8 fw-semibold'>كفالة معتمر واحد</span>
             <button className='btn btn-white border text-nowrap'>
                <span className='text-golden'>150</span> 
                 <small className='ms-1'> ر.س</small>
             </button>
             </Col>
-            <Col className='col-4 text-center'>
+            <Col  lg={6} md={6} sm={6} xs={6} className=' text-center'>
             <span className='fs-8 fw-semibold'>كفالة معتمرين</span>
             <button className='btn btn-white border text-nowrap'>
                 <span className='text-golden'>300</span>
                 <small className='ms-1'> ر.س</small>
             </button>
             </Col>
-            <Col className='col-4 text-center'>
-            <span className='fs-8 fw-semibold'>كفالة ثلاثة معتمرين</span>
+            <Col lg={12} md={12} sm={12} xs={12} className=' text-center my-2'>
+            <span className='fs-8 fw-semibold mx-2'>كفالة ثلاثة معتمرين</span>
             <button className='btn btn-white border text-nowrap'>
                <span className='text-golden'> 450</span> 
                 <small className='ms-1'> ر.س</small>
@@ -50,15 +50,15 @@ export default function CustomCard() {
         </Row>
         <Row className='mt-2'>
             <Form>
-                <Row className='justify-content-between align-items-center'>
-                    <Col className='col-6'>
-                    <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8' />
+                <Row className='justify-content-around align-items-center'>
+                    <Col lg={12} md={12} sm={12} xs={12} className='d-flex'>
+                    <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto' />
                     </Col>
-                    <Col className='col-2'>
-                    <Button type='submit' variant='primary-blue' className=' rounded rounded-5 fs-8'> تبرع الان</Button>
+                    <Col lg={6} md={6} sm={6} xs={6} className='d-flex'>
+                    <Button type='submit' variant='primary-blue' className=' rounded rounded-5 fs-8 mx-auto'> تبرع الان</Button>
                     </Col>
-                    <Col className='col-2'>
-                    <i className="fa-solid fa-cart-shopping text-golden fa-2x"></i>
+                    <Col lg={6} md={6} sm={6} xs={6} className=' d-flex'>
+                    <i className="fa-solid fa-cart-shopping text-golden fa-2x mx-auto"></i>
                     </Col>
                 </Row>
                     
