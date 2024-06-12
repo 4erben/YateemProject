@@ -1,6 +1,29 @@
+::-webkit-scrollbar {
+  width: 8px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+  border-radius: 10px;
+  height: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-orange); /* Color of the thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the thumb on hover */
+}
+
+
+
+
 :root{
   --text-orange:rgb(172 114 16); 
   --opacity-white: #ededed;
+  --color-shade: #374045;
 }
 h6{
   color: #21446f !important;
@@ -31,6 +54,9 @@ input::placeholder{
 .cursor-pointer{
   cursor: pointer !important;
 }
+.bg-shade{
+  background-color: var(--color-shade) !important;
+}
 /* Header */
 .header{
   position: sticky;
@@ -59,10 +85,21 @@ input::placeholder{
 .nav-link span{
  margin-left: 10px;
 }
-.nav-link:hover{
-  content: "";
+.nav-link{
   position: relative;
-  border-bottom: 4px solid orange;
+}
+.nav-link:hover::after{
+  display: block;
+}
+.nav-link::after{
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--text-orange);
+  display: none;
 }
 .logo{
   width: 60px;
@@ -86,11 +123,22 @@ input::placeholder{
   height: 25px;
   background-color: white;
   position: fixed;
-  z-index: 1231;
+  z-index: 999;
   border-radius: 20px  0px 0 20px;
   right: 0;
-  top: 13rem;
+  top: 16rem;
+  transition:  height 0.5s ease , opacity 0.5s ease , padding 0.5s ease;
   overflow: hidden;
+}
+.expanded{
+  height: 300px !important;
+  width: 300px !important;
+}
+
+.side-input::placeholder{
+  text-align: end;
+  color: var(--text-orange);
+  font-weight: 1200;
 }
 .side-button{
   background-color: #21446f;
@@ -100,6 +148,12 @@ input::placeholder{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.side-click:hover{
+  background-color: var(--text-orange) !important;
+  color: white !important;
+  text-align: center;
+  cursor: pointer;
 }
 .statistics::before{
   background-color: rgb(172 114 16);

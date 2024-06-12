@@ -10,6 +10,7 @@ import Footer from './Components/Footer.jsx';
 import ProjectsPage from './Pages/ProjectsPage.jsx';
 import GiftsPage from './Pages/GiftsPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
+import CartPage from './Pages/CartPage.jsx';
 function App() {
   return (
     <>
@@ -32,6 +33,10 @@ function App() {
         <Route
         path="/login"
         element= {<LoginPage />}
+        />
+        <Route
+        path="/cart"
+        element= {<CartPage />}
         />
       </Routes>
       <Footer/>

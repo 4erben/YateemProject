@@ -16,16 +16,16 @@ export default function Header() {
             <h6 className='pt-2 fw-bold '>مبني اليتيم بمكة</h6>
             </Col>
             <Col className=' col-3 logo-container'>
-            <a href="https://myfixpedia.com" className="navbar-brand ">
+            <Link href="https://myfixpedia.com" className="navbar-brand" to="/">
                 <img className='logo'
                 loading="lazy" src={Logo} alt="مبنى اليتيم بمكة"/>
-            </a>
+            </Link>
             </Col>
             <Col className=' col-3  me-auto d-flex'>
-            <a id='cart' className='cursor-pointer me-auto'>
+            <Link id='cart' className='cursor-pointer me-auto' to="/cart">
                 <img className="icon mx-2" src="https://myfixpedia.com/site/assets/images/icons/icon-shopping_cart.svg" alt="سلة تبرعاتك"/>
                 <span className="cartCount badge ">2</span>
-            </a>
+            </Link>
             </Col>
             </Row>
             <Row className='w-100 justify-content-center justify-content-md-around py-2 '>
