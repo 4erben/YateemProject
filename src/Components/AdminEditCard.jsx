@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { createNewCard } from '../Redux/Slices/AdminSlice';
+import { editCard } from '../Redux/Slices/AdminSlice';
 
-export default function AdminAddCard() {
+export default function AdminEditCard() {
     const dispatch = useDispatch();
     const [category,setCategory] =useState("");
+    const [_id,setId] =useState("");
     const [title ,setTitle] = useState("");
     const [totalMoney, setTotalMoney] = useState("");
     const [imgSrc , setImgSrc] = useState("");
@@ -14,12 +15,18 @@ export default function AdminAddCard() {
     const [sahm3 , setSahm3] = useState("");
     function handleAddCard(e){
         e.preventDefault();
-        dispatch(createNewCard({category,title,totalMoney,imgSrc,sahm1,sahm2,sahm3}))
+        dispatch(editCard({_id,category,title,totalMoney,imgSrc,sahm1,sahm2,sahm3}))
     }
   return (
     <Col lg={12}> 
     <Form onSubmit={handleAddCard} className='text-center my-5'> 
-        <h4>Add New Card</h4>
+        <h4>Edit Card</h4>
+        <Row>
+            <Col className='col-6 mx-auto my-2 fw-semibold'>
+            <Form.Label>Enter Card Id</Form.Label>
+            <Form.Control type='text' placeholder='Enter Category' value={_id} onChange={(e)=>{setId(e.target.value)}} required/>
+            </Col>
+        </Row>
         <Row className='my-2 text-center justify-content-center'>
         <Col lg={3} md={4} sm={6} xs={6} className=''>
             <Form.Label> Category</Form.Label>

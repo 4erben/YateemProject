@@ -4,12 +4,12 @@ export const createNewCard = createAsyncThunk(
     "admin/createProduct",
     async(args)=>{
       /*   const {token} = JSON.parse(localStorage.getItem("user")); */
+      console.log(args);
         try{
-            const res = await fetch(`https://httpbin.org/post`,{
+            const res = await fetch(`http://localhost:3000/card`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
-/*                     "Authorization": `Bearer ${token}` */
                 },
                 body:JSON.stringify(args)
             });
@@ -23,17 +23,37 @@ export const createNewCard = createAsyncThunk(
         
     }
 );
-
-export const removeProduct = createAsyncThunk(
+export const editCard = createAsyncThunk(
     "admin/removeProduct",
     async(args)=>{
-        const {token} = JSON.parse(localStorage.getItem("user"));
         try{
-            const res = await fetch(`${process.env.BACKEND_URI}/api/admin/products`,{
+            const res = await fetch(`http://localhost:3000/card`,{
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",
-                    "Authorization": `Bearer ${token}`
+                   /*  "Authorization": `Bearer ${token}` */
+                },
+                body:JSON.stringify(args)
+            });
+                const response = await res.json();
+                return response;
+        }catch(err){
+        console.log(err)
+        return err.message
+            }
+    }
+)
+
+export const removeCard = createAsyncThunk(
+    "admin/removeProduct",
+    async(args)=>{
+       /*  const {token} = JSON.parse(localStorage.getItem("user")); */
+        try{
+            const res = await fetch(`http://localhost:3000/card`,{
+                method:"DELETE",
+                headers:{
+                    "Content-Type":"application/json",
+                   /*  "Authorization": `Bearer ${token}` */
                 },
                 body:JSON.stringify(args)
             });
@@ -64,7 +84,15 @@ const adminSlice = createSlice({
         .addCase(createNewCard.rejected,(state,action)=>{
 
         })
-        
+        .addCase(removeCard.pending,(state,action)=>{
+
+        })
+        .addCase(removeCard.fulfilled,(state,action)=>{
+            state.product = action.payload;
+        })
+        .addCase(removeCard.rejected,(state,action)=>{
+
+        })
     }
 })
 

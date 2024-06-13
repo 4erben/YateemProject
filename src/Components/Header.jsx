@@ -36,7 +36,7 @@ export default function Header() {
                     <Nav className="flex-row justify-content-between align-items-center">
                     <Link to="/" className='mx-2 nav-link'>الرئيسية</Link>
                     <Link to="/projects" className='mx-2 nav-link'>فرص التبرع</Link>
-                    <Link to="/adminpanel" className='mx-2 nav-link'>ادارة الكروت</Link>
+                    <Link to="/dashboard" className='mx-2 nav-link'>ادارة الكروت</Link>
                     <Link href="#link" className='mx-2 nav-link'>الترخيص</Link>
                     </Nav>
                     </Navbar.Collapse>

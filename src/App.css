@@ -37,6 +37,9 @@
   background: #374045 !important;
   color: #fff !important;
 }
+.bg-primary-blue{
+  background: #374045 !important;
+}
 input::placeholder{
   font-size: 12px;
   font-weight: 500;
@@ -105,6 +108,7 @@ input::placeholder{
 .logo{
   width: 60px;
 }
+
 .logo-container{
   position: absolute;
   right: 50px;
@@ -253,7 +257,19 @@ input::placeholder{
 }
 
 
+/* Dashboard */
 
+.logo-sidebar{
+  width: 75px !important;
+  aspect-ratio: 1;
+}
+.avatar-sidebar{
+  width: 7rem;
+  aspect-ratio: 1;
+}
+/* .dashboard{
+  
+} */
 
 /* Footer */
 .footer{

@@ -11,7 +11,10 @@ import ProjectsPage from './Pages/ProjectsPage.jsx';
 import GiftsPage from './Pages/GiftsPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import CartPage from './Pages/CartPage.jsx';
-import AdminPanel from './Pages/AdminPanel.jsx';
+import AdminAddCard from './Components/AdminAddCard.jsx';
+import Panel from './Pages/Dashboard.jsx';
+import AdminRemoveCard from './Components/AdminRemoveCard.jsx';
+import AdminEditCard from './Components/AdminEditCard.jsx';
 function App() {
   return (
     <>
@@ -40,9 +43,22 @@ function App() {
         element= {<CartPage />}
         />
         <Route
-        path="/adminpanel"
-        element= {<AdminPanel />}
-        />
+        path="/dashboard"
+        element= {<Panel />}
+        >
+          <Route
+            path='add'
+            element={<AdminAddCard/> }
+            />
+            <Route
+            path='remove'
+            element={<AdminRemoveCard/> }
+            />
+            <Route
+            path='edit'
+            element={<AdminEditCard/> }
+            />
+        </Route>
       </Routes>
       <Footer/>
       </Container>
