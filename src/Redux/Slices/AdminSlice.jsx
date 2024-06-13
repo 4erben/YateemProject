@@ -6,7 +6,7 @@ export const createNewCard = createAsyncThunk(
       /*   const {token} = JSON.parse(localStorage.getItem("user")); */
       console.log(args);
         try{
-            const res = await fetch(`http://localhost:3000/card`,{
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/card`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
@@ -14,7 +14,6 @@ export const createNewCard = createAsyncThunk(
                 body:JSON.stringify(args)
             });
             const card = await res.json();
-            console.log(card);
             return card;
         }catch(err){
             console.log(err);
@@ -27,7 +26,7 @@ export const editCard = createAsyncThunk(
     "admin/removeProduct",
     async(args)=>{
         try{
-            const res = await fetch(`http://localhost:3000/card`,{
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/card`,{
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",
@@ -49,7 +48,7 @@ export const removeCard = createAsyncThunk(
     async(args)=>{
        /*  const {token} = JSON.parse(localStorage.getItem("user")); */
         try{
-            const res = await fetch(`http://localhost:3000/card`,{
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/card`,{
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",

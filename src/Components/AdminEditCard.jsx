@@ -30,31 +30,31 @@ export default function AdminEditCard() {
         <Row className='my-2 text-center justify-content-center'>
         <Col lg={3} md={4} sm={6} xs={6} className=''>
             <Form.Label> Category</Form.Label>
-            <Form.Control type='text' placeholder='Enter Category' value={category} onChange={(e)=>{setCategory(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='Enter Category' value={category} onChange={(e)=>{setCategory(e.target.value)}}/>
         </Col>
         <Col lg={3} md={4} sm={6} xs={6} >
             <Form.Label> Total Money</Form.Label>
-            <Form.Control type='number' placeholder='Enter Total Money' value={totalMoney} onChange={(e)=>{setTotalMoney(e.target.value)}} required/>
+            <Form.Control type='number' placeholder='Enter Total Money' value={totalMoney} onChange={(e)=>{setTotalMoney(e.target.value)}} />
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Image</Form.Label>
-            <Form.Control type='text' placeholder='Enter Image Link' value={imgSrc} onChange={(e)=>{setImgSrc(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='Enter Image Link' value={imgSrc} onChange={(e)=>{setImgSrc(e.target.value)}} />
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Title</Form.Label>
-            <Form.Control type='text' placeholder='Title' value={title} onChange={(e)=>{setTitle(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='Title' value={title} onChange={(e)=>{setTitle(e.target.value)}} />
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Sahm One</Form.Label>
-            <Form.Control type='text' placeholder='One' value={sahm1} onChange={(e)=>{setSahm1(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='One' value={sahm1} onChange={(e)=>{setSahm1(e.target.value)}} />
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Sahm Two</Form.Label>
-            <Form.Control type='text' placeholder='Two' value={sahm2} onChange={(e)=>{setSahm2(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='Two' value={sahm2} onChange={(e)=>{setSahm2(e.target.value)}} />
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Sahm Three</Form.Label>
-            <Form.Control type='text' placeholder='Three'value={sahm3} onChange={(e)=>{setSahm3(e.target.value)}} required/>
+            <Form.Control type='text' placeholder='Three'value={sahm3} onChange={(e)=>{setSahm3(e.target.value)}} />
         </Col>
         </Row>
         <Button type='submit' variant="dark">12123</Button>
