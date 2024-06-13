@@ -2,8 +2,11 @@ import React from 'react'
 import {Container, Navbar, Row ,Nav, NavDropdown, Col} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import Logo from "../assets/logo.png";
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+    const cartItems = useSelector(state=>state.cart.cartItems);
+    console.log(cartItems);
   return (
     <header className='header bg-white'>
     <Navbar expand="lg" className='p-0' dir='rtl'>
@@ -24,7 +27,7 @@ export default function Header() {
             <Col className=' col-3  me-auto d-flex'>
             <Link id='cart' className='cursor-pointer me-auto' to="/cart">
                 <img className="icon mx-2" src="https://myfixpedia.com/site/assets/images/icons/icon-shopping_cart.svg" alt="سلة تبرعاتك"/>
-                <span className="cartCount badge ">2</span>
+                <span className="cartCount badge ">{cartItems.length}</span>
             </Link>
             </Col>
             </Row>

@@ -1,7 +1,10 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 export default function CartPage() {
   return (
-    <div>CartPage</div>
+    <Container className='py-5'>
+
+    </Container>
   )
 }

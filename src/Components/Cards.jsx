@@ -1,69 +1,98 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {useDispatch, useSelector} from "react-redux";
 import {Card , Button ,Container ,Row , Col ,Form} from "react-bootstrap";
+import { addToCart } from '../Redux/Slices/CartSlice';
 
-export default function CustomCard() {
+export default function CustomCard({title,gained,totalMoney,imgSrc,no, Sahm ,card}) {
+    const remainingMoney = totalMoney - gained;
+    const percentage = Math.floor((gained / totalMoney) * 100)
+    const [money , setMoney]= useState("");
+    const dispatch = useDispatch();
+    
+
+
+
+    function handleInputMoney(e){
+        setMoney(e.target.value)
+    };
+    function handleAddToCart(e){
+        e.preventDefault()
+        dispatch(
+            addToCart({card: card})
+        )
+    }
+
   return (
-    <Col md={6} lg={4} className='my-2'>
+    <Col md={6} lg={4} xl={4}  className='my-2'>
     <Container dir='rtl' className='bg-white rounded rounded-4 py-3'>
         <Row>
-            <h6 className="text-truncate">كفالة معتمر</h6>
+            <Col>
+            <h6 className="text-truncate title">{title}</h6>
+            </Col>
         </Row>
         <Row>
-            <Col className='col-12'>
-            <div className='custom-card-image position-relative'>
-                
-            </div>
+            <Col className='col-12 position-relative px-0'>
+                <img  src={imgSrc} className='custom-card-image w-100 position-relative'/>
+                <span className='percentage-line' data-number={`${percentage}`} style={{ '--percentage': `${percentage}%` }} ></span>
             </Col>
         </Row>
         <Row className='mt-2'>
             <Col>
-            <small className="text-primary-green">تم جمع</small>
-            <label className="text-primary-blue d-block h6 font-semibold">500<small className="ms-1 text-nowrap">ر.س</small><span className="visually-hidden">(10.00%)</span></label>
+            <small className="text-golden fw-bold">تم جمع</small>
+            <label className="text-primary-blue d-block h6 fw-bolder">{gained}<small className="ms-1 text-nowrap">ر.س</small><span className="visually-hidden">(10.00%)</span></label>
             </Col>
             <Col>
-            <small className="text-primary-green">المبلغ المتبقي</small>
-            <label className="text-primary-blue d-block h6 font-semibold ">4500<small className="ms-1 text-nowrap">ر.س</small></label>
+            <small className="text-golden fw-bold">المبلغ المتبقي</small>
+            <label className="text-primary-blue d-block h6 fw-bolder">{remainingMoney}<small className="ms-1 text-nowrap">ر.س</small></label>
             </Col>
         </Row>
         <Row>
-            <Col lg={6} md={6} sm={6} xs={6}  className=' text-center'>
-            <span className='fs-8 fw-semibold'>كفالة معتمر واحد</span>
-            <button className='btn btn-white border text-nowrap'>
-               <span className='text-golden'>150</span> 
-                <small className='ms-1'> ر.س</small>
+            <Col lg={4} md={4} sm={4} xs={4}  className='text-center  px-0'>
+            <span className='fs-8 fw-semibold d-block  my-1'>{Sahm[0]}</span>
+            <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(150)}}>
+               <span className='text-golden fw-bold'>150</span> 
+                <small className='ms-1 text-golden'> ر.س</small>
             </button>
             </Col>
-            <Col  lg={6} md={6} sm={6} xs={6} className=' text-center'>
-            <span className='fs-8 fw-semibold'>كفالة معتمرين</span>
-            <button className='btn btn-white border text-nowrap'>
-                <span className='text-golden'>300</span>
-                <small className='ms-1'> ر.س</small>
+            <Col  lg={4} md={4} sm={4} xs={4} className=' text-center   px-0'>
+            <span className='fs-8 fw-semibold d-block my-1'>{Sahm[1]}</span>
+            <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(300)}}>
+                <span className='text-golden fw-bold'>300</span>
+                <small className='ms-1 text-golden'> ر.س</small>
             </button>
             </Col>
-            <Col lg={12} md={12} sm={12} xs={12} className=' text-center my-2'>
-            <span className='fs-8 fw-semibold mx-2'>كفالة ثلاثة معتمرين</span>
-            <button className='btn btn-white border text-nowrap'>
-               <span className='text-golden'> 450</span> 
-                <small className='ms-1'> ر.س</small>
+            <Col lg={4} md={4} sm={4} xs={4} className=' text-center    px-0' >
+            <span className='fs-8 fw-semibold mx-2 d-block  my-1'>{Sahm[2]}</span>
+            <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(450)}}>
+               <span className='text-golden fw-bold'> 450</span> 
+                <small className='ms-1 text-golden'> ر.س</small>
             </button>
             </Col>
         </Row>
         <Row className='mt-2'>
-            <Form>
-                <Row className='justify-content-around align-items-center'>
-                    <Col lg={12} md={12} sm={12} xs={12} className='d-flex'>
-                    <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto' />
+            
+                <Row className='align-items-center px-0'>
+                    <Col lg={10} md={10} sm={10} xs={10} className='mx-0 px-0'>
+                    <Form className='px-0'>
+                        <Row>
+                        <Col lg={7} md={7} sm={7} xs={7} className='d-flex px-0'>
+                        <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto rounded-pill' value={money} onChange={handleInputMoney} />
+                        </Col>
+                        <Col lg={5} md={5} sm={5} xs={5} className='d-flex px-0'>
+                        <button type='submit'  className=' rounded-pill my-auto mx-1 w-100 text-nowrap donate-btn'> تبرع الان</button>
+                        </Col>
+                        </Row>
+                    </Form>
                     </Col>
-                    <Col lg={6} md={6} sm={6} xs={6} className='d-flex'>
-                    <Button type='submit' variant='primary-blue' className=' rounded rounded-5 fs-8 mx-auto'> تبرع الان</Button>
-                    </Col>
-                    <Col lg={6} md={6} sm={6} xs={6} className=' d-flex'>
-                    <i className="fa-solid fa-cart-shopping text-golden fa-2x mx-auto"></i>
+                    <Col lg={2} md={2} sm={2} xs={2} className=' d-flex px-0'>
+                        <button className='cart-button rounded-circle p-2 mx-auto' onClick={handleAddToCart}>
+                        <i className="fa-solid fa-cart-plus text-white"></i>
+                        </button>
                     </Col>
                 </Row>
                     
 
-            </Form>
+            
         </Row>
         <hr/>
         <Row className='text-center fw-semibold'> 
