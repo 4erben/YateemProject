@@ -7,7 +7,7 @@ export default function AdminAddCard() {
     const dispatch = useDispatch();
     const [category,setCategory] =useState("");
     const [title ,setTitle] = useState("");
-    const [totalMoney, setTotalMoney] = useState();
+    const [totalMoney, setTotalMoney] = useState("");
     const [imgSrc , setImgSrc] = useState("");
     const [sahm1 , setSahm1] = useState("");
     const [sahm2 , setSahm2] = useState("");
