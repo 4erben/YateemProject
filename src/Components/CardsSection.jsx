@@ -16,15 +16,15 @@ export default function CardsSection() {
     )}
   }
   return (
-    <Row className='mx-0 w-100 mx-auto '>
+    <Row className='mx-0 w-100 mx-auto bg-c-owhite '>
     <Row>
       <Col className='col-12 text-center mt-2'>
       <h6 className='title'> مشاريع تنتظر دعمكم</h6>
       </Col>
       
     </Row>
-    <Row className='my-5' dir='rtl'>
-    <Col className='d-flex justify-content-center col-12' >
+    <Row className='my-5  ' dir='rtl'>
+    <Col className='d-flex justify-content-center col-12 ' >
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="عام"  onClick={handleFilteredCards}/>
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="مباني" onClick={handleFilteredCards}/>
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="سقيا الماء" onClick={handleFilteredCards} />

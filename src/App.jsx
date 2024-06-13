@@ -11,6 +11,7 @@ import ProjectsPage from './Pages/ProjectsPage.jsx';
 import GiftsPage from './Pages/GiftsPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import CartPage from './Pages/CartPage.jsx';
+import AdminPanel from './Pages/AdminPanel.jsx';
 function App() {
   return (
     <>
@@ -37,6 +38,10 @@ function App() {
         <Route
         path="/cart"
         element= {<CartPage />}
+        />
+        <Route
+        path="/adminpanel"
+        element= {<AdminPanel />}
         />
       </Routes>
       <Footer/>

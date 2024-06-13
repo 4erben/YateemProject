@@ -14,7 +14,7 @@ export default function HomePage() {
             <CustomCarousel />
             </Col>
         </Row>
-        <Row className='bg-c-owhite'>
+        <Row className=''>
         <CardsSection/>
         </Row>
         <Statitiscs />

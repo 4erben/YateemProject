@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
     const cartItems = useSelector(state=>state.cart.cartItems);
-    console.log(cartItems);
   return (
     <header className='header bg-white'>
     <Navbar expand="lg" className='p-0' dir='rtl'>
@@ -37,7 +36,7 @@ export default function Header() {
                     <Nav className="flex-row justify-content-between align-items-center">
                     <Link to="/" className='mx-2 nav-link'>الرئيسية</Link>
                     <Link to="/projects" className='mx-2 nav-link'>فرص التبرع</Link>
-                    <Link to="#link" className='mx-2 nav-link'>حاسبة الزكاة</Link>
+                    <Link to="/adminpanel" className='mx-2 nav-link'>ادارة الكروت</Link>
                     <Link href="#link" className='mx-2 nav-link'>الترخيص</Link>
                     </Nav>
                     </Navbar.Collapse>

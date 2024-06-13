@@ -8,10 +8,6 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,no, Sahm ,car
     const percentage = Math.floor((gained / totalMoney) * 100)
     const [money , setMoney]= useState("");
     const dispatch = useDispatch();
-    
-
-
-
     function handleInputMoney(e){
         setMoney(e.target.value)
     };
@@ -21,7 +17,6 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,no, Sahm ,car
             addToCart({card: card})
         )
     }
-
   return (
     <Col md={6} lg={4} xl={4}  className='my-2'>
     <Container dir='rtl' className='bg-white rounded rounded-4 py-3'>

@@ -115,9 +115,6 @@ input::placeholder{
 .text-c-orange{
   color: var(--text-orange) !important;
 }
-/* body{
-  min-height: 200vh;
-} */
 /* Home Page */
 .side-element{
   width: 120px;
