@@ -7,7 +7,7 @@ export default function AdminAddCard() {
     const dispatch = useDispatch();
     const [category,setCategory] =useState("");
     const [title ,setTitle] = useState("");
-    const [totalMoney, setTotalMoney] = useState("");
+    const [totalMoney, setTotalMoney] = useState();
     const [imgSrc , setImgSrc] = useState("");
     const [sahm1 , setSahm1] = useState("");
     const [sahm2 , setSahm2] = useState("");
@@ -27,7 +27,7 @@ export default function AdminAddCard() {
         </Col>
         <Col lg={3} md={4} sm={6} xs={6} >
             <Form.Label> Total Money</Form.Label>
-            <Form.Control type='number' placeholder='Enter Total Money' value={totalMoney} onChange={(e)=>{setTotalMoney(e.target)}}/>
+            <Form.Control type='number' placeholder='Enter Total Money' value={totalMoney} onChange={(e)=>{setTotalMoney(e.target.value)}}/>
         </Col>
         <Col lg={3} md={4} sm={6} xs={6}>
             <Form.Label> Image</Form.Label>
