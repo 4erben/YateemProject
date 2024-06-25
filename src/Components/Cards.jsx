@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Card , Button ,Container ,Row , Col ,Form} from "react-bootstrap";
 import { addToCart } from '../Redux/Slices/CartSlice';
 
-export default function CustomCard({title,gained,totalMoney,imgSrc,no, Sahm ,card}) {
+export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sahm2,Sahm3 ,card}) {
     const remainingMoney = totalMoney - gained;
     const percentage = Math.floor((gained / totalMoney) * 100)
     const [money , setMoney]= useState("");
@@ -43,21 +43,21 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,no, Sahm ,car
         </Row>
         <Row>
             <Col lg={4} md={4} sm={4} xs={4}  className='text-center  px-0'>
-            <span className='fs-8 fw-semibold d-block  my-1'>{Sahm[0]}</span>
+            <span className='fs-8 fw-semibold d-block  my-1'>{Sahm1}</span>
             <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(150)}}>
                <span className='text-golden fw-bold'>150</span> 
                 <small className='ms-1 text-golden'> ر.س</small>
             </button>
             </Col>
             <Col  lg={4} md={4} sm={4} xs={4} className=' text-center   px-0'>
-            <span className='fs-8 fw-semibold d-block my-1'>{Sahm[1]}</span>
+            <span className='fs-8 fw-semibold d-block my-1'>{Sahm2}</span>
             <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(300)}}>
                 <span className='text-golden fw-bold'>300</span>
                 <small className='ms-1 text-golden'> ر.س</small>
             </button>
             </Col>
             <Col lg={4} md={4} sm={4} xs={4} className=' text-center    px-0' >
-            <span className='fs-8 fw-semibold mx-2 d-block  my-1'>{Sahm[2]}</span>
+            <span className='fs-8 fw-semibold mx-2 d-block  my-1'>{Sahm3}</span>
             <button className='btn btn-white border text-nowrap px-0' onClick={(e)=>{setMoney(450)}}>
                <span className='text-golden fw-bold'> 450</span> 
                 <small className='ms-1 text-golden'> ر.س</small>

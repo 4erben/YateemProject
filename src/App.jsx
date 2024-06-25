@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Header from './Components/Header.jsx';
 import  {Routes , Route}  from "react-router-dom";
 import  {Container} from "react-bootstrap"
+import {useDispatch} from "react-redux";
 import HomePage from './Pages/HomePage';
 import SideElement from './Components/SideElement.jsx';
 import Footer from './Components/Footer.jsx';
@@ -15,7 +16,13 @@ import AdminAddCard from './Components/AdminAddCard.jsx';
 import Panel from './Pages/Dashboard.jsx';
 import AdminRemoveCard from './Components/AdminRemoveCard.jsx';
 import AdminEditCard from './Components/AdminEditCard.jsx';
+import { useEffect } from 'react';
+import { getProducts } from './Redux/Slices/cardsSlice.jsx';
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[dispatch])
   return (
     <>
     <Container fluid className='mx-0 px-0 d-flex flex-column top-container'>

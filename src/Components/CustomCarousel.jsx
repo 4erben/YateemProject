@@ -8,7 +8,7 @@ export default function CustomCarousel() {
 
     <Carousel>
       <Carousel.Item>
-        <img className='img-fluid w-100' alt='img1' src={i1} />
+      <img className='img-fluid w-100' alt='img1' src={i1} />
       </Carousel.Item>
       <Carousel.Item>
       <img className='img-fluid w-100' alt='img1' src={i2} />

@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap'
-import cards from '../data/data';
-import CustomCard from './Cards';
-export default function CardsSection() {
-    const [filteredCards , setFilteredCards] = useState(cards);
-    function handleFilteredCards(e){
-    const category = e.target.value;
-    if(category =="عام"){setFilteredCards(cards)}else{
+import {useSelector ,useDispatch} from "react-redux";
+import { Button, Col, Container, Row , Spinner } from 'react-bootstrap'
 
-    
-    setFilteredCards(
-      cards.filter((card)=>{
-        return card.category == category
-      })
-    )}
-  }
+import CustomCard from './Cards';
+import { categoryFilter } from '../Redux/Slices/cardsSlice';
+export default function CardsSection() {
+    const cards = useSelector(state=>state.cards.cards);
+    const isLoading = useSelector(state=>state.cards.loading);
+    const filteredCards = useSelector(state=>state.cards.filteredCards);
+    const dispatch = useDispatch();
+    console.log(cards);
+   /*  const [filteredCards , setFilteredCards] = useState(cards); */
+    function handleFilteredCards(e){
+      dispatch(categoryFilter({fullProducts: cards,category:e.target.value}))
+        }
+  
   return (
     <Row className='mx-0 w-100 mx-auto bg-c-owhite '>
     <Row>
@@ -31,20 +31,25 @@ export default function CardsSection() {
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="كفالات" onClick={handleFilteredCards}/>
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="الفقراء" onClick={handleFilteredCards}/>
       </Col>
-    {filteredCards.map((card)=>{
+    { !isLoading? filteredCards.map((card)=>{
       return(
         <CustomCard
         card = {card}
-        no= {card.no}
+        no= {card.id}
         title = {card.title}
         gained = {card.gained}
         totalMoney={card.totalMoney}
         imgSrc = {card.imgSrc}
-        Sahm = {card.Sahm}
-        key={card.no}
+        Sahm1 = {card.Sahm1}
+        Sahm2 = {card.Sahm2}
+        Sahm3 = {card.Sahm3}
+        key={card.id}
         />
       )
-    })}
+    }): <Spinner animation="border" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </Spinner>
+  }
     </Row>
   </Row>
   )
