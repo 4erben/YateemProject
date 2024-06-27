@@ -23,9 +23,11 @@ export default function CartPage() {
           giftCards.map((card)=>{
             return(
               <CartItem 
+              key={card.id}
               giftImg={card.imgSrc} 
               giftCategory={card.category} 
               title={card.title}  
+              card = {card}
               />
             )
           })
