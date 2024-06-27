@@ -27,7 +27,7 @@ export const editCard = createAsyncThunk(
     async(args)=>{
         try{
             const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/card`,{
-                method:"DELETE",
+                method:"PUT",
                 headers:{
                     "Content-Type":"application/json",
                    /*  "Authorization": `Bearer ${token}` */

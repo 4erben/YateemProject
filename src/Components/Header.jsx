@@ -36,33 +36,33 @@ export default function Header() {
                     <Nav className="flex-row justify-content-between align-items-center">
                     <Link to="/" className='mx-2 nav-link'>الرئيسية</Link>
                     <Link to="/projects" className='mx-2 nav-link'>فرص التبرع</Link>
-                    <Link to="/dashboard" className='mx-2 nav-link'>ادارة الكروت</Link>
-                    <Link href="#link" className='mx-2 nav-link'>الترخيص</Link>
+                    <Link to="/dashboard" className='mx-2 nav-link pointer-none' disabled>حاسبة الزكاة</Link>
+                    <Link href="#link" className='mx-2 nav-link pointer-none'>الترخيص</Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Col>
                 <Col xs={12} sm={12} md={12} lg={8} xl={8} className='d-flex justify-content-around align-items-center'>
                 <Row className='align-items-center  justify-content-lg-around w-100 fw-bold'>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="/gifts">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="/gifts">
                         <i className="fa-solid fa-gift text-c-orange"></i>
-                        <span className="text-primary-blue mx-1">الاهداءات</span>
+                        <span className="text-primary-blue mx-1 ">الاهداءات</span>
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="#link">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="#link">
                     <i className="fa-solid fa-file text-c-orange"></i>
                         <span className="text-primary-blue mx-1">الايصالات</span>
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="#link">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="#link">
                         <i className="fa-solid fa-certificate text-c-orange"></i>
                         <span className="text-primary-blue mx-1">صك الوقفية</span>
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 login_icon d-flex align-items-center" to="/login">
+                    <Link className="nav-link p-0 mt-1 pe-3 login_icon d-flex align-items-center pointer-none" to="/login">
                         <i className="fa-solid fa-address-book fa-2x text-c-orange"></i>
                         <span className="text-primary-blue mx-1">تسجيل الدخول</span>
                     </Link>

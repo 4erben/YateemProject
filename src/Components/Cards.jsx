@@ -4,6 +4,7 @@ import {Card , Button ,Container ,Row , Col ,Form} from "react-bootstrap";
 import { addToCart } from '../Redux/Slices/CartSlice';
 
 export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sahm2,Sahm3 ,card}) {
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const remainingMoney = totalMoney - gained;
     const percentage = Math.floor((gained / totalMoney) * 100)
     const [money , setMoney]= useState("");
@@ -18,8 +19,8 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
         )
     }
   return (
-    <Col md={6} lg={4} xl={4}  className='my-2'>
-    <Container dir='rtl' className='bg-white rounded rounded-4 py-3'>
+    <Col md={6} lg={4} xl={4}  className='my-2 '>
+    <Container dir='rtl' className='bg-white rounded rounded-4 py-3 overflow-hidden'>
         <Row>
             <Col>
             <h6 className="text-truncate title">{title}</h6>
@@ -27,7 +28,7 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
         </Row>
         <Row>
             <Col className='col-12 position-relative px-0'>
-                <img  src={imgSrc} className='custom-card-image w-100 position-relative'/>
+                <img  src={ baseURL + imgSrc} className='custom-card-image w-100 position-relative'/>
                 <span className='percentage-line' data-number={`${percentage}`} style={{ '--percentage': `${percentage}%` }} ></span>
             </Col>
         </Row>

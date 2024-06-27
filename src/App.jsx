@@ -12,17 +12,15 @@ import ProjectsPage from './Pages/ProjectsPage.jsx';
 import GiftsPage from './Pages/GiftsPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import CartPage from './Pages/CartPage.jsx';
-import AdminAddCard from './Components/AdminAddCard.jsx';
-import Panel from './Pages/Dashboard.jsx';
-import AdminRemoveCard from './Components/AdminRemoveCard.jsx';
-import AdminEditCard from './Components/AdminEditCard.jsx';
 import { useEffect } from 'react';
 import { getProducts } from './Redux/Slices/cardsSlice.jsx';
+import { getBanners } from './Redux/Slices/bannerSlice.jsx';
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getProducts());
-  },[dispatch])
+    dispatch(getBanners());
+  },[])
   return (
     <>
     <Container fluid className='mx-0 px-0 d-flex flex-column top-container'>
@@ -49,23 +47,6 @@ function App() {
         path="/cart"
         element= {<CartPage />}
         />
-        <Route
-        path="/dashboard"
-        element= {<Panel />}
-        >
-          <Route
-            path='add'
-            element={<AdminAddCard/> }
-            />
-            <Route
-            path='remove'
-            element={<AdminRemoveCard/> }
-            />
-            <Route
-            path='edit'
-            element={<AdminEditCard/> }
-            />
-        </Route>
       </Routes>
       <Footer/>
       </Container>

@@ -4,12 +4,9 @@ import { Button, Col, Container, Row , Spinner } from 'react-bootstrap'
 
 import CustomCard from './Cards';
 import { categoryFilter } from '../Redux/Slices/cardsSlice';
-export default function CardsSection() {
-    const cards = useSelector(state=>state.cards.cards);
+export default function CardsSection({cards}) {
     const isLoading = useSelector(state=>state.cards.loading);
-    const filteredCards = useSelector(state=>state.cards.filteredCards);
     const dispatch = useDispatch();
-    console.log(cards);
    /*  const [filteredCards , setFilteredCards] = useState(cards); */
     function handleFilteredCards(e){
       dispatch(categoryFilter({fullProducts: cards,category:e.target.value}))
@@ -31,7 +28,7 @@ export default function CardsSection() {
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="كفالات" onClick={handleFilteredCards}/>
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="الفقراء" onClick={handleFilteredCards}/>
       </Col>
-    { !isLoading? filteredCards.map((card)=>{
+    { !isLoading? cards.map((card)=>{
       return(
         <CustomCard
         card = {card}

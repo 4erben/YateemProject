@@ -30,6 +30,9 @@
   line-height: 30px;
   font-weight: bolder;
 }
+.pointer-none{
+  pointer-events: none !important;
+}
 .fs-8{
   font-size: 12px !important;
 }

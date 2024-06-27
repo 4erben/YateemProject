@@ -3,10 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const getProducts = createAsyncThunk(
     "cards/getProducts",
     async(args)=>{
-        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3dhcWYtYWx5YXRpbS5jb20vYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTkzMzcwNDcsImV4cCI6MTcxOTM0MDY0NywibmJmIjoxNzE5MzM3MDQ3LCJqdGkiOiJqZUxkVDFINm1RT0J3RzRpIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.2yGT7jaacKGn8igLw7RryNfjyvL76JJkWlvl98MISoo";
-      console.log(args);
         try{
-            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/projects?token=${token}`);
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/projects`);
             if(!res.ok){
                 const errorData = await res.json();
                 throw new Error(errorData.message  || "An Error Occured")
