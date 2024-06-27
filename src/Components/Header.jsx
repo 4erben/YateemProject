@@ -36,8 +36,8 @@ export default function Header() {
                     <Nav className="flex-row justify-content-between align-items-center">
                     <Link to="/" className='mx-2 nav-link'>الرئيسية</Link>
                     <Link to="/projects" className='mx-2 nav-link'>فرص التبرع</Link>
-                    <Link to="/dashboard" className='mx-2 nav-link pointer-none' disabled>حاسبة الزكاة</Link>
-                    <Link href="#link" className='mx-2 nav-link pointer-none'>الترخيص</Link>
+                    <Link to="/dashboard" className='mx-2 nav-link pointer-none' >حاسبة الزكاة</Link>
+                    <Link to="/licensing" className='mx-2 nav-link '>الترخيص</Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Col>
@@ -50,19 +50,19 @@ export default function Header() {
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="#link">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="/login">
                     <i className="fa-solid fa-file text-c-orange"></i>
                         <span className="text-primary-blue mx-1">الايصالات</span>
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="#link">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="/login">
                         <i className="fa-solid fa-certificate text-c-orange"></i>
                         <span className="text-primary-blue mx-1">صك الوقفية</span>
                     </Link>
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 login_icon d-flex align-items-center pointer-none" to="/login">
+                    <Link className="nav-link p-0 mt-1 pe-3 login_icon d-flex align-items-center " to="/login">
                         <i className="fa-solid fa-address-book fa-2x text-c-orange"></i>
                         <span className="text-primary-blue mx-1">تسجيل الدخول</span>
                     </Link>

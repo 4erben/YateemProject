@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name:"cart",
     initialState:{
-        cartItems:  []
+        cartItems:  [],
+        totalMoney : 0
 },
     reducers:{
         addToCart:(state,action)=>{
@@ -16,11 +17,14 @@ const cartSlice = createSlice({
                 state.cartItems.push(tempProduct); 
             }
             localStorage.setItem("cart",JSON.stringify(state.cartItems));
+        },
+        totalMoney:(state,action)=>{
+            state.totalMoney += Number(action.payload)
         }
     }
 
 });
 
 
-export const {  addToCart } = cartSlice.actions;
+export const {  addToCart ,totalMoney } = cartSlice.actions;
 export default cartSlice.reducer;

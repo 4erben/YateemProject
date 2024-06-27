@@ -4,7 +4,6 @@ import CardsSection from '../Components/CardsSection';
 
 export default function GiftsPage() {
 
-  console.log(giftCards);
   return (
     <Container>
       

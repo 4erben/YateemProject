@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {Card , Button ,Container ,Row , Col ,Form} from "react-bootstrap";
 import { addToCart } from '../Redux/Slices/CartSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sahm2,Sahm3 ,card}) {
+    const navigate = useNavigate();
     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const remainingMoney = totalMoney - gained;
     const percentage = Math.floor((gained / totalMoney) * 100)
@@ -17,6 +19,10 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
         dispatch(
             addToCart({card: card})
         )
+    }
+    const handleDonate = (e)=>{
+        e.preventDefault();
+        navigate("/checkout",{ state: {message: card}});
     }
   return (
     <Col md={6} lg={4} xl={4}  className='my-2 '>
@@ -69,13 +75,13 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
             
                 <Row className='align-items-center px-0'>
                     <Col lg={10} md={10} sm={10} xs={10} className='mx-0 px-0'>
-                    <Form className='px-0'>
+                    <Form className='px-0' onSubmit={handleDonate}>
                         <Row>
                         <Col lg={7} md={7} sm={7} xs={7} className='d-flex px-0'>
                         <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto rounded-pill' value={money} onChange={handleInputMoney} />
                         </Col>
                         <Col lg={5} md={5} sm={5} xs={5} className='d-flex px-0'>
-                        <button type='submit'  className=' rounded-pill my-auto mx-1 w-100 text-nowrap donate-btn'> تبرع الان</button>
+                        <button type='submit'  className=' rounded-pill my-auto mx-1 w-100 text-nowrap donate-btn' > تبرع الان</button>
                         </Col>
                         </Row>
                     </Form>

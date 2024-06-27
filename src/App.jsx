@@ -15,6 +15,9 @@ import CartPage from './Pages/CartPage.jsx';
 import { useEffect } from 'react';
 import { getProducts } from './Redux/Slices/cardsSlice.jsx';
 import { getBanners } from './Redux/Slices/bannerSlice.jsx';
+import Licensing from './Pages/Licensing.jsx';
+import RegisterPage from './Pages/RegisterPage.jsx';
+import CheckoutPage from './Pages/CheckoutPage.jsx';
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -36,6 +39,10 @@ function App() {
         element ={<ProjectsPage />}
         />
         <Route
+          path='/licensing'
+          element={<Licensing/>}
+          />
+        <Route
         path="/gifts"
         element= {<GiftsPage />}
         />
@@ -44,9 +51,17 @@ function App() {
         element= {<LoginPage />}
         />
         <Route
+        path="/register"
+        element= {<RegisterPage />}
+        />
+        <Route
         path="/cart"
         element= {<CartPage />}
         />
+        <Route
+          path='/checkout'
+          element={<CheckoutPage/>}
+          />
       </Routes>
       <Footer/>
       </Container>
