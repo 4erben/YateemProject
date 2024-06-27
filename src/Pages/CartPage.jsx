@@ -9,7 +9,6 @@ export default function CartPage() {
   const giftCards = useSelector(state=>state.cart.cartItems);
   const navigate = useNavigate();
   const handleDonate = (e)=>{
-    e.preventDefault();
     navigate("/checkout");
 }
   return (

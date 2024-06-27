@@ -1,12 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
 import {Row , Col , Container , Form} from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 export default function SideElement() {
+  const navigate = useNavigate();
   const [isClicked, setIsClicked] = useState(false);
   function handleForm(){
     setIsClicked(!isClicked);
   }
+  const handleDonate = (e)=>{
+    e.preventDefault();
+    navigate("/checkout");
+}
   return (
   <>
     {
@@ -47,7 +53,7 @@ export default function SideElement() {
           </button>
         </Col>
       </Row>
-      <Form>
+      <Form onSubmit={handleDonate}>
       <Row className='justify-content-center'>
         <Col className='col-10'>
          <input
