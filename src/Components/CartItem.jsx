@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeFromCart, totalMoney } from '../Redux/Slices/CartSlice';
+import { removeFromCart, setCardDonation, totalMoney } from '../Redux/Slices/CartSlice';
 
 export default function CartItem({giftImg,giftCategory,title,card}) {
     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const dispatch = useDispatch();
-    const [input , setInput] =useState(0);
     const handleInput = (e)=>{
-        setInput(e.target.value);
-        dispatch(totalMoney(input));
+        dispatch(setCardDonation({card:card, donation: Number(e.target.value)}));
+        dispatch(totalMoney());
     }
     const handleRemoveFromCart = (e)=>{
-        dispatch(removeFromCart({card}))
+        dispatch(removeFromCart({card}));
+        dispatch(totalMoney());
     }
   return (
-    <div className='d-flex justify-content-between'>
+    <div className='d-flex justify-content-between align-items-center'>
           <div className='cart-item col-3 ' data-category={giftCategory}>
             <img src={baseURL + giftImg} alt="pic" className='img-fluid' />
           </div>
@@ -24,7 +24,7 @@ export default function CartItem({giftImg,giftCategory,title,card}) {
                 <span onClick={handleRemoveFromCart} className='cursor-pointer'><i className="fa-solid fa-xmark"></i></span>
               </div>
               <div>
-                <input className='form-control' type='number' placeholder='ر.س' value={input} onChange={handleInput} />
+                <input className='form-control' type='number' placeholder='ر.س' value={card.donateMoney}  onChange={handleInput} />
               </div>
           </div>
         </div>

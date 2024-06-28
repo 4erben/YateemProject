@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Row , Col, Form, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom'
 
 export default function CheckoutPage() {
     const location = useLocation();
-    const message = location.state?.message;
-    console.log(message);
+    const money = location.state?.donateMoney;
   return (
     <Container dir='rtl' className='py-5 checkout-container'>
         <Row className='py-5 my-5'>
@@ -13,7 +13,7 @@ export default function CheckoutPage() {
                 <h1>الدفع</h1>
                 <div className='d-flex flex-column align-items-start justify-content-center pay-now px-5'>
                     <span>المبلغ الاجمالي</span>
-                    <span>44 ر.س</span>
+                    <span>{money} ر.س</span>
                 </div>
             </Col>
             <Col lg={6} className='my-5 py-3'>
@@ -50,7 +50,7 @@ export default function CheckoutPage() {
                             <Form.Group className='row my-3 btn-group'>
                                 <div className='d-flex justify-content-between my-2 '>
                                     <span>الاجمالي:</span>
-                                    <span>44 ر.س</span>
+                                    <span>{money} ر.س</span>
                                 </div>
                                 <Button className='rounded-pill '>اتمام عملية التبرع</Button>
                             </Form.Group>

@@ -22,7 +22,7 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
     }
     const handleDonate = (e)=>{
         e.preventDefault();
-        navigate("/checkout",{ state: {message: card}});
+        navigate("/checkout",{ state: {donateMoney: money}});
     }
   return (
     <Col md={6} lg={4} xl={4}  className='my-2 '>
@@ -78,7 +78,7 @@ export default function CustomCard({title,gained,totalMoney,imgSrc,id, Sahm1,Sah
                     <Form className='px-0' onSubmit={handleDonate}>
                         <Row>
                         <Col lg={7} md={7} sm={7} xs={7} className='d-flex px-0'>
-                        <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto rounded-pill' value={money} onChange={handleInputMoney} />
+                        <Form.Control type='number' placeholder='مبلغ التبرع' className='fs-8 my-2 mx-auto rounded-pill' value={money} onChange={handleInputMoney} required />
                         </Col>
                         <Col lg={5} md={5} sm={5} xs={5} className='d-flex px-0'>
                         <button type='submit'  className=' rounded-pill my-auto mx-1 w-100 text-nowrap donate-btn' > تبرع الان</button>

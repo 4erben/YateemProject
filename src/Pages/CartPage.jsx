@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CartPage() {
   const giftCards = useSelector(state=>state.cart.cartItems);
+  const total = useSelector(state=>state.cart.totalMoney);
   const navigate = useNavigate();
   const handleDonate = (e)=>{
-    navigate("/checkout");
+    navigate("/checkout",{state:{donateMoney: total}});
 }
   return (
     <Container className='py-5 px-0 cart-container' fluid dir='rtl'>
@@ -38,7 +39,7 @@ export default function CartPage() {
             <div className='text-center d-flex flex-column align-items-center mx-5 rounded rounded-4 pt-5 border border-2'>
               <h2 className='mb-2'>المجموع</h2>
               <div className='my-3 d-flex align-items-center'>
-              <h3 className='fw-bold mx-1'>44</h3>
+              <h3 className='fw-bold mx-1'>{total}</h3>
               <small >ر.س</small>
               </div>
               <div className='bg-light w-100  py-2 mt-4 cart-btn-container'>
