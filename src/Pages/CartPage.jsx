@@ -10,7 +10,7 @@ export default function CartPage() {
   const total = useSelector(state=>state.cart.totalMoney);
   const navigate = useNavigate();
   const handleDonate = (e)=>{
-    navigate("/checkout",{state:{donateMoney: total}});
+    navigate("/checkout",{state:{donateMoney: total ,cartItems: giftCards}});
 }
   return (
     <Container className='py-5 px-0 cart-container' fluid dir='rtl'>

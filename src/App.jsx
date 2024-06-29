@@ -13,7 +13,7 @@ import GiftsPage from './Pages/GiftsPage.jsx';
 import LoginPage from './Pages/LoginPage.jsx';
 import CartPage from './Pages/CartPage.jsx';
 import { useEffect } from 'react';
-import { getProducts } from './Redux/Slices/cardsSlice.jsx';
+import { getCards } from './Redux/Slices/cardsSlice.jsx';
 import { getBanners } from './Redux/Slices/bannerSlice.jsx';
 import Licensing from './Pages/Licensing.jsx';
 import RegisterPage from './Pages/RegisterPage.jsx';
@@ -21,8 +21,8 @@ import CheckoutPage from './Pages/CheckoutPage.jsx';
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(getProducts());
-    dispatch(getBanners());
+    dispatch(getCards());
+   /*  dispatch(getBanners()); */
   },[])
   return (
     <>

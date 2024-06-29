@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+
 ::-webkit-scrollbar {
   width: 8px; /* Width of the entire scrollbar */
 }
@@ -17,7 +20,12 @@
   background: #555; /* Color of the thumb on hover */
 }
 
-
+body{
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
 
 :root{
   --text-orange:rgb(172 114 16); 
@@ -159,7 +167,7 @@ input::placeholder{
   justify-content: center;
   align-items: center;
 }
-.side-click:hover{
+.active{
   background-color: var(--text-orange) !important;
   color: white !important;
   text-align: center;
@@ -361,7 +369,7 @@ input::placeholder{
     button{
       font-weight: bolder !important;
       border: 0;
-      background:linear-gradient(270deg, rgb(172 114 16) 20%, #374045 105%); ;
+      background:linear-gradient(270deg, rgb(172 114 16) 20%, #374045 105%); 
     }
     .btn-group{
       font-weight: bolder;
@@ -381,9 +389,47 @@ input::placeholder{
   width: 7rem;
   aspect-ratio: 1;
 }
-/* .dashboard{
-  
-} */
+
+/* Gifts Page */
+
+.giftspage{
+    .gifts-section{
+      /* border: 1px solid rgba(0, 0, 0, 0.158); */
+      padding: 10px;
+      box-shadow: 5px 5px 10px rgba(95, 91, 91, 0.397);
+      border-radius: 5px;
+    }
+    label{
+      font-weight: bolder;
+    }
+    .payment-input::placeholder{
+      text-align: start;
+      color: var(--text-orange);
+      font-weight: 800;
+    }
+    .currency-symbol{
+      position: absolute;
+      color: var(--text-orange);
+      font-weight: 800;
+      left: 15%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .payment-btn{
+      font-weight: bolder !important;
+      border: 0;
+      border-radius: 20px;
+      color: white !important;
+      background:linear-gradient(270deg, rgb(172 114 16) 20%, #374045 105%); ;
+    }
+    .download-btn{
+      font-weight: bolder !important;
+      border-radius: 20px;
+      border: 1px solid black ;
+    }
+    
+}
+
 
 /* Footer */
 .footer{

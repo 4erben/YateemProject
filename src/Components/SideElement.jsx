@@ -5,14 +5,35 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SideElement() {
   const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [donateType, setDonateType] = useState("تيسرت");
   const [isClicked, setIsClicked] = useState(false);
+  const [money,setMoney] = useState(0);
   function handleForm(){
     setIsClicked(!isClicked);
   }
   const handleDonate = (e)=>{
     e.preventDefault();
-    navigate("/checkout");
-}
+    navigate("/checkout",{state:{donateMoney: money, donateType:donateType}});
+};
+const handleColumnClick = (index) => {
+  setActiveIndex(index === activeIndex ? null : index);
+  switch(index){
+    case 0:
+      setDonateType("تيسرت");
+      break;
+    case 1:
+      setDonateType("تبرع عام");
+      break;
+    case 2:
+      setDonateType("وقف");
+      break;
+    case 3:
+      setDonateType("المساجد");
+      break;
+  }
+};
+console.log(donateType);
   return (
   <>
     {
@@ -27,27 +48,35 @@ export default function SideElement() {
       <Col className='side-button cursor-pointer col-3' onClick={handleForm}><i className="fa-solid fa-plus text-white"  ></i></Col>
       </Row>
       <Row>
-        <Col className="col-3 border-start  fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2">تيسرت</Col>
-        <Col className="col-3 border-start fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2">تبرع عام</Col>
-        <Col className="col-3 border-start fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2">وقف</Col>
-        <Col className="col-3  fs-8 fw-bold text-golden text-center side-click cursor-pointer d-flex align-items-center py-2" >المساجد</Col>
+        <Col className={`col-3 border-start  fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2 ${
+          activeIndex === 0 ? 'active' : ''
+        }`}  onClick={() => {handleColumnClick(0)}}>تيسرت</Col>
+        <Col className={`col-3 border-start  fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2 ${
+          activeIndex === 1 ? 'active' : ''
+        }`}  onClick={() => {handleColumnClick(1)}}>تبرع عام</Col>
+        <Col className={`col-3 border-start  fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2 ${
+          activeIndex === 2 ? 'active' : ''
+        }`}  onClick={() => {handleColumnClick(2)}}>وقف</Col>
+        <Col className={`col-3 border-start  fs-8 fw-bold text-golden side-click text-center cursor-pointer d-flex align-items-center py-2 ${
+          activeIndex === 3 ? 'active' : ''
+        }`}  onClick={() => {handleColumnClick(3)}}>المساجد</Col>
       </Row>
       <hr className='mt-0'/>
       <Row className='py-2'>
         <Col className='col-4 text-center'>
-        <button className='btn btn-white border text-nowrap'>
+        <button className='btn btn-white border text-nowrap' onClick={(e)=>{setMoney(150)}}>
         <span className='text-golden'>150</span> 
         <small className='ms-1'> ر.س</small>
         </button>
         </Col>
         <Col className='col-4 text-center'>
-            <button className='btn btn-white border text-nowrap'>
+            <button className='btn btn-white border text-nowrap' onClick={(e)=>{setMoney(300)}}>
                 <span className='text-golden'>300</span>
                 <small className='ms-1'> ر.س</small>
             </button>
             </Col>
         <Col className='col-4 text-center'>
-          <button className='btn btn-white border text-nowrap'>
+          <button className='btn btn-white border text-nowrap' onClick={(e)=>{setMoney(450)}}>
               <span className='text-golden'> 450</span> 
               <small className='ms-1'> ر.س</small>
           </button>
@@ -61,6 +90,8 @@ export default function SideElement() {
           className='w-100  side-input px-2 form-control rounded-5'
           placeholder='ر.س'
           dir='rtl'
+          value={money}
+          onChange={(e)=>{setMoney(e.target.value)}}
           />
         </Col>
         <Col className='col-12 text-center fs-8 fw-bold '>

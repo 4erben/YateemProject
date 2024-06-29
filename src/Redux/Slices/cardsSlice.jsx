@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getProducts = createAsyncThunk(
-    "cards/getProducts",
+export const getCards = createAsyncThunk(
+    "cards/getCards",
     async(args)=>{
         try{
             const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/projects`);
@@ -24,7 +24,7 @@ export const getProducts = createAsyncThunk(
 const cardsSlice = createSlice({
    name: "cards",
     initialState:{
-        cards: null,
+        cards: [],
         err:null,
         filteredCards : [],
         category:null,
@@ -32,12 +32,12 @@ const cardsSlice = createSlice({
     },
     reducers:{
         categoryFilter: (state,action)=>{
-            const fullProducts = state.cards;
+            const fullCards = state.cards;
             const category = action.payload.category;
             if(category === "عام"){
                 state.filteredCards = state.cards;
             }else{
-                state.filteredCards = fullProducts.filter(p=>{
+                state.filteredCards = fullCards.filter(p=>{
                 return p.category === category;
             })
             }
@@ -46,15 +46,15 @@ const cardsSlice = createSlice({
     },
     extraReducers(builder){
         builder
-        .addCase(getProducts.pending,(state,action)=>{
+        .addCase(getCards.pending,(state,action)=>{
             state.loading = true
         })
-        .addCase(getProducts.fulfilled,(state,action)=>{
+        .addCase(getCards.fulfilled,(state,action)=>{
             state.cards = action.payload;
             state.filteredCards = action.payload;
             state.loading = false
         })
-        .addCase(getProducts.rejected,(state,action)=>{
+        .addCase(getCards.rejected,(state,action)=>{
             state.loading = false
         })
     }

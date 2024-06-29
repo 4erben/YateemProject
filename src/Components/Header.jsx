@@ -44,7 +44,7 @@ export default function Header() {
                 <Col xs={12} sm={12} md={12} lg={8} xl={8} className='d-flex justify-content-around align-items-center'>
                 <Row className='align-items-center  justify-content-lg-around w-100 fw-bold'>
                     <Col lg={3} md={3} sm={6} xs={6} className='my-2'>
-                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center pointer-none" to="/gifts">
+                    <Link className="nav-link p-0 mt-1 pe-3 d-flex align-items-center" to="/gifts">
                         <i className="fa-solid fa-gift text-c-orange"></i>
                         <span className="text-primary-blue mx-1 ">الاهداءات</span>
                     </Link>

@@ -28,7 +28,7 @@ export default function CardsSection({cards}) {
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="كفالات" onClick={handleFilteredCards}/>
       <input type='button' className='mx-1 btn btn-light px-4 fw-bold text-secondary' value="الفقراء" onClick={handleFilteredCards}/>
       </Col>
-    { !isLoading? cards.map((card)=>{
+    { !isLoading? cards?.map((card)=>{
       return(
         <CustomCard
         card = {card}
