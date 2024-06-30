@@ -1,11 +1,13 @@
 import React from 'react'
 import {Container, Navbar, Row ,Nav, NavDropdown, Col} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import Logo from "../assets/logo.png";
+/* import Logo from "../assets/logo.png"; */
 import { useSelector } from 'react-redux';
 
 export default function Header() {
     const cartItems = useSelector(state=>state.cart.cartItems);
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const logo = useSelector(state=>state.banners.logo);
   return (
     <header className='header bg-white'>
     <Navbar expand="lg" className='p-0' dir='rtl'>
@@ -20,7 +22,7 @@ export default function Header() {
             <Col className=' col-3 logo-container'>
             <Link href="https://myfixpedia.com" className="navbar-brand" to="/">
                 <img className='logo'
-                loading="lazy" src={Logo} alt="مبنى اليتيم بمكة"/>
+                loading="lazy" src={baseURL + logo?.img_url} alt="مبنى اليتيم بمكة"/>
             </Link>
             </Col>
             <Col className=' col-3  me-auto d-flex'>

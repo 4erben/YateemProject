@@ -14,7 +14,7 @@ import LoginPage from './Pages/LoginPage.jsx';
 import CartPage from './Pages/CartPage.jsx';
 import { useEffect } from 'react';
 import { getCards } from './Redux/Slices/cardsSlice.jsx';
-import { getBanners } from './Redux/Slices/bannerSlice.jsx';
+import { getBanners, getLogo } from './Redux/Slices/bannerSlice.jsx';
 import Licensing from './Pages/Licensing.jsx';
 import RegisterPage from './Pages/RegisterPage.jsx';
 import CheckoutPage from './Pages/CheckoutPage.jsx';
@@ -22,7 +22,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getCards());
-   /*  dispatch(getBanners()); */
+    dispatch(getBanners());
+    dispatch(getLogo());
   },[])
   return (
     <>

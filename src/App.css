@@ -32,6 +32,9 @@ body{
   --opacity-white: #ededed;
   --color-shade: #374045;
 }
+.caro-img{
+  max-height: 400px !important;
+}
 
 .card-shadow{
   border: none;
