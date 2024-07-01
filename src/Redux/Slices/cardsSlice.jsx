@@ -10,6 +10,7 @@ export const getCards = createAsyncThunk(
                 throw new Error(errorData.message  || "An Error Occured")
             }
             const cards = await res.json();
+            console.log(res);
             return cards;
         }catch(err){
             console.log(err);

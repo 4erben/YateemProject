@@ -19,11 +19,13 @@ import Licensing from './Pages/Licensing.jsx';
 import RegisterPage from './Pages/RegisterPage.jsx';
 import CheckoutPage from './Pages/CheckoutPage.jsx';
 function App() {
+  const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
   const dispatch = useDispatch();
   useEffect(()=>{
      dispatch(getCards()); 
   
   },[])
+  console.log(baseURL);
   return (
     <>
     <Container fluid className='mx-0 px-0 d-flex flex-column top-container'>
