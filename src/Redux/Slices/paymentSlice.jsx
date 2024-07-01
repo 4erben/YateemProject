@@ -9,7 +9,7 @@ export const postPayment = createAsyncThunk(
             // Create a FormData object
             const formData = new FormData();
             formData.append('jsonData', jsonData);
-            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/payment`,{
+            const res = await fetch(`https://waqf-alyatim.com/api/payment`,{
                 method:"POST",
                 body: JSON.stringify(args)
             });

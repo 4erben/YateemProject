@@ -4,7 +4,7 @@ export const getBanners = createAsyncThunk(
     "banners/getBanners",
     async(args ,{rejectWithValue})=>{
         try{
-            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/images`);
+            const res = await fetch(`https://waqf-alyatim.com/api/images`);
             if(!res.ok){
                 const errorData = await res.json();
                 throw new Error(errorData.error  || "An Error Occured")
