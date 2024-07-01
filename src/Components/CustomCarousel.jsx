@@ -5,7 +5,7 @@ import i1 from "../assets/carousel/1.jpeg";
 import i2 from "../assets/carousel/2.jpeg";
 import i3 from "../assets/carousel/2.jpeg";
 export default function CustomCarousel() {
-  const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+ /*  const baseURL = import.meta.env.VITE_REACT_APP_API_URL; */
   /* const carousels = useSelector(state=>state.banners.banners); */
   const carousels = [
     {

@@ -21,9 +21,8 @@ import CheckoutPage from './Pages/CheckoutPage.jsx';
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(getCards());
-    /* dispatch(getBanners());
-    dispatch(getLogo()); */
+     dispatch(getCards()); 
+  
   },[])
   return (
     <>
