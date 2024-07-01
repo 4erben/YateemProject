@@ -31,7 +31,7 @@ export default function CustomCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {carousels?.map((caro)=>{
         return(
-        <Carousel.Item>
+        <Carousel.Item key={caro.id}>
          <img className='img-fluid w-100 caro-img' alt="banner" src={baseURL + caro.image_url} />
          </Carousel.Item>
         )
