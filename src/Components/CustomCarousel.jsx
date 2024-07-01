@@ -5,7 +5,7 @@ import i1 from "../assets/carousel/1.jpeg";
 import i2 from "../assets/carousel/2.jpeg";
 import i3 from "../assets/carousel/2.jpeg";
 export default function CustomCarousel() {
-  const baseURL = "https://waqf-alyatim.com";
+  const baseURL = `${import.meta.env.VITE_REACT_APP_API_URL}`;
   const carousels = useSelector(state=>state.banners.banners);
   /* const carousels = [
     {
@@ -29,14 +29,14 @@ export default function CustomCarousel() {
     };
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      {/* {carousels?.map((caro)=>{
+      {carousels?.map((caro)=>{
         return(
         <Carousel.Item key={caro.id}>
          <img className='img-fluid w-100 caro-img' alt="banner" src={baseURL + caro.image_url} />
          </Carousel.Item>
         )
-      })} */}
-      <Carousel.Item >
+      })}
+      {/* <Carousel.Item >
          <img className='img-fluid w-100 caro-img' alt="banner" src={i1} />
          </Carousel.Item>
          <Carousel.Item >
@@ -44,7 +44,7 @@ export default function CustomCarousel() {
          </Carousel.Item>
          <Carousel.Item >
          <img className='img-fluid w-100 caro-img' alt="banner" src={i3} />
-         </Carousel.Item>
+         </Carousel.Item> */}
     </Carousel>
   )
 }
