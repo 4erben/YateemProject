@@ -17,7 +17,7 @@ export default function HomePage() {
             </Col>
         </Row>
         <Row className=''>
-        {/* <CardsSection cards={filteredCards}/> */}
+        <CardsSection cards={filteredCards}/>
         </Row>
         <Statitiscs />
     </Container>

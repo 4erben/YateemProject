@@ -5,9 +5,9 @@ import i1 from "../assets/carousel/1.jpeg";
 import i2 from "../assets/carousel/2.jpeg";
 import i3 from "../assets/carousel/2.jpeg";
 export default function CustomCarousel() {
- /*  const baseURL = import.meta.env.VITE_REACT_APP_API_URL; */
-  /* const carousels = useSelector(state=>state.banners.banners); */
-  const carousels = [
+  const baseURL = "https://waqf-alyatim.com";
+  const carousels = useSelector(state=>state.banners.banners);
+  /* const carousels = [
     {
       title:"banner one",
       image_url: i1
@@ -20,7 +20,7 @@ export default function CustomCarousel() {
       title:"banner three",
       image_url: i3
     },
-  ]
+  ] */
 
     const [index, setIndex] = useState(0);
 
@@ -29,7 +29,7 @@ export default function CustomCarousel() {
     };
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-     {/*  {carousels?.map((caro)=>{
+      {/* {carousels?.map((caro)=>{
         return(
         <Carousel.Item key={caro.id}>
          <img className='img-fluid w-100 caro-img' alt="banner" src={baseURL + caro.image_url} />
