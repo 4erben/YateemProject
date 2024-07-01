@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
     const cartItems = useSelector(state=>state.cart.cartItems);
-    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+/*     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const logo = useSelector(state=>state.banners.logo);
-    console.log(baseURL + logo?.img_url);
+    console.log(baseURL + logo?.img_url); */
   return (
     <header className='header bg-white'>
     <Navbar expand="lg" className='p-0' dir='rtl'>

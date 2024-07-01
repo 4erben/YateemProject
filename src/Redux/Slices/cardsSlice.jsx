@@ -4,7 +4,7 @@ export const getCards = createAsyncThunk(
     "cards/getCards",
     async(args)=>{
         try{
-            const res = await fetch(`https://waqf-alyatim.com/api/projects`);
+            const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/projects`);
             if(!res.ok){
                 const errorData = await res.json();
                 throw new Error(errorData.message  || "An Error Occured")

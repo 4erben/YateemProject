@@ -7,7 +7,6 @@ import { categoryFilter } from '../Redux/Slices/cardsSlice';
 export default function CardsSection({cards}) {
     const isLoading = useSelector(state=>state.cards.loading);
     const dispatch = useDispatch();
-   /*  const [filteredCards , setFilteredCards] = useState(cards); */
     function handleFilteredCards(e){
       dispatch(categoryFilter({fullProducts: cards,category:e.target.value}))
         }

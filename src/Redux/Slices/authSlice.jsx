@@ -35,7 +35,7 @@ export const register = createAsyncThunk(
     "auth/register",
     async(args)=>{
         try{
-             const res = await fetch(`https://waqf-alyatim.com/api/auth/register`,{
+             const res = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/api/auth/register`,{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify(

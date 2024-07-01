@@ -22,8 +22,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getCards());
-    dispatch(getBanners());
-    dispatch(getLogo());
+    /* dispatch(getBanners());
+    dispatch(getLogo()); */
   },[])
   return (
     <>
