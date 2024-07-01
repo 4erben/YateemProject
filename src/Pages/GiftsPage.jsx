@@ -47,7 +47,7 @@ export default function GiftsPage() {
           </Row>
         </Row>
       
-        <GiftsPaymentSection selectedCard={selectedCard} />
+       {/*  <GiftsPaymentSection selectedCard={selectedCard} /> */}
     </Container>
   )
 }
