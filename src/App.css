@@ -33,7 +33,8 @@ body{
   --color-shade: #374045;
 }
 .caro-img{
-  max-height: 400px !important;
+  max-height: 600px !important;
+  object-fit:fill;
 }
 
 .card-shadow{
